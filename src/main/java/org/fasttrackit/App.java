@@ -1,7 +1,5 @@
 package org.fasttrackit;
 
-//import java.util.Date;
-
 import java.time.LocalDate;
 
 public class App {
@@ -15,20 +13,24 @@ public class App {
         dog.healthLevel = 7.7;
         dog.hungerLevel = 2.1;
         dog.moodLevel = 10.0;
+        dog.printInfo();
 
         Rescuer rescuer = new Rescuer();
         rescuer.money = 1000;
         rescuer.name = "Ana";
+        rescuer.prinInfo();
 
         AnimalFood pedigree = new AnimalFood();
         pedigree.name = "Pedigree";
         pedigree.expireDate = LocalDate.of(2020, 05, 20);
-//        System.out.println(pedigree.expireDate);
+        pedigree.quantity = 20;
         pedigree.isInStock = true;
+        pedigree.printInfo();
 
         Veterinary veterinar = new Veterinary();
         veterinar.name = "Raul";
         veterinar.specialization = "";
+        veterinar.printInfo();
 
         Activities fetch = new Activities();
         fetch.dogName = "Nero";

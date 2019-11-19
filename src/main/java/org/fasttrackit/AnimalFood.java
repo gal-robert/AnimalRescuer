@@ -9,4 +9,8 @@ public class AnimalFood {
     double quantity;
     LocalDate expireDate;
     boolean isInStock;
+
+    public void printInfo() {
+        System.out.println("\nFood:\n   -Name: " + this.name + "\n   -Quantity: " + this.quantity + "\n   -Expire Date: " + this.expireDate + "\n   -Available: " + this.isInStock);
+    }
 }

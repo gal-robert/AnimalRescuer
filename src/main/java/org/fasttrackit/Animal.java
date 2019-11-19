@@ -10,4 +10,8 @@ public class Animal {
     String favoriteFood;
     String favoriteActivity;
 
+    public void printInfo() {
+        System.out.println("\nAnimal:\n   -Name: " + this.name + "\n   -Age: " + this.age + "\n   -Health level: " + this.healthLevel + "\n   -Hunger level: " + this.hungerLevel + "\n   -Mood level: " + this.moodLevel);
+    }
+
 }
