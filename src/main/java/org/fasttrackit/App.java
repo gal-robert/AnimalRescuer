@@ -6,14 +6,14 @@ public class App {
     public static void main(String[] args) {
 
         Animal cat = new Animal("Princess", 10);
-        cat.favoriteActivity = "running away from dogs";
         cat.favoriteFood = "mice";
-        cat.healthLevel = 7.7;
-        cat.hungerLevel = 2.1;
-        cat.moodLevel = 10.0;
         cat.printInfo();
 
         Dog dog = new Dog("Rufus", 2, "Akita");
+        dog.hungerLevel = 5.2;
+        dog.moodLevel = 5.0;
+        dog.favoriteFood = "Pedigree";
+        dog.printInfo();
 
         Rescuer rescuer = new Rescuer("Alex", 1000);
         rescuer.printInfo();
@@ -26,9 +26,12 @@ public class App {
         Veterinary veterinar = new Veterinary("Joe", "Canine");
         veterinar.printInfo();
 
-        Activities fetch = new Activities(rescuer, dog);
+        Activities walk = new Activities(rescuer, dog);
 
-        DogActivities walking = new DogActivities(rescuer, dog, "Walking", 60);
+        DogActivities fetch = new DogActivities(rescuer, dog, "fetch", 30);
+        fetch.doActivity();
+
+        rescuer.feed(dog, pedigree);
 
     }
 }

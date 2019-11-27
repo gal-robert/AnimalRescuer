@@ -10,4 +10,18 @@ public class DogActivities extends Activities {
         this.activityName = activityName;
         this.activityDurationInS = activityDurationInM;
     }
+
+    public void doActivity() {
+        System.out.println("\n" +
+                rescuer + " just played " + activityName + " with " + animalName + " for " + activityDurationInS + " minutes"
+        );
+
+        if (moodLevel + 5 > 10) {
+            moodLevel = 10;
+        } else {
+            moodLevel += 5;
+        }
+
+        System.out.println("Current mood level: " + moodLevel);
+    }
 }

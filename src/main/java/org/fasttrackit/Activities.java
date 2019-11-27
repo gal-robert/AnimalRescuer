@@ -2,11 +2,13 @@ package org.fasttrackit;
 
 public class Activities {
     String rescuer;
-    String dogName;
+    String animalName;
     String veterinarName;
+    double moodLevel;
 
     public Activities(Rescuer rescuer, Animal animal) {
         this.rescuer = rescuer.name;
-        this.dogName = animal.name;
+        this.animalName = animal.name;
+        this.moodLevel = animal.moodLevel;
     }
 }
