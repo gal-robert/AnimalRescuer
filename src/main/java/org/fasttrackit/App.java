@@ -5,13 +5,15 @@ import java.time.LocalDate;
 public class App {
     public static void main(String[] args) {
 
-        Animal dog = new Animal("Nero", 10);
-        dog.favoriteActivity = "fetch";
-        dog.favoriteFood = "Pedigree";
-        dog.healthLevel = 7.7;
-        dog.hungerLevel = 2.1;
-        dog.moodLevel = 10.0;
-        dog.printInfo();
+        Animal cat = new Animal("Princess", 10);
+        cat.favoriteActivity = "running away from dogs";
+        cat.favoriteFood = "mice";
+        cat.healthLevel = 7.7;
+        cat.hungerLevel = 2.1;
+        cat.moodLevel = 10.0;
+        cat.printInfo();
+
+        Dog dog = new Dog("Rufus", 2, "Akita");
 
         Rescuer rescuer = new Rescuer("Alex", 1000);
         rescuer.printInfo();
@@ -25,7 +27,8 @@ public class App {
         veterinar.printInfo();
 
         Activities fetch = new Activities(rescuer, dog);
-        fetch.veterinarName = "Raul";
+
+        DogActivities walking = new DogActivities(rescuer, dog, "Walking", 60);
 
     }
 }
