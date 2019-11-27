@@ -5,9 +5,7 @@ import java.time.LocalDate;
 public class App {
     public static void main(String[] args) {
 
-        Animal dog = new Animal();
-        dog.name = "Nero";
-        dog.age = 42;
+        Animal dog = new Animal("Nero", 10);
         dog.favoriteActivity = "fetch";
         dog.favoriteFood = "Pedigree";
         dog.healthLevel = 7.7;
@@ -15,26 +13,18 @@ public class App {
         dog.moodLevel = 10.0;
         dog.printInfo();
 
-        Rescuer rescuer = new Rescuer();
-        rescuer.money = 1000;
-        rescuer.name = "Ana";
-        rescuer.prinInfo();
+        Rescuer rescuer = new Rescuer("Alex", 1000);
+        rescuer.printInfo();
 
-        AnimalFood pedigree = new AnimalFood();
-        pedigree.name = "Pedigree";
+        AnimalFood pedigree = new AnimalFood("Pedigree", 30);
         pedigree.expireDate = LocalDate.of(2020, 05, 20);
-        pedigree.quantity = 20;
         pedigree.isInStock = true;
         pedigree.printInfo();
 
-        Veterinary veterinar = new Veterinary();
-        veterinar.name = "Raul";
-        veterinar.specialization = "";
+        Veterinary veterinar = new Veterinary("Joe", "Canine");
         veterinar.printInfo();
 
-        Activities fetch = new Activities();
-        fetch.dogName = "Nero";
-        fetch.rescuer = "Ana";
+        Activities fetch = new Activities(rescuer, dog);
         fetch.veterinarName = "Raul";
 
     }

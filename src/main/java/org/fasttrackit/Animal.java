@@ -14,4 +14,8 @@ public class Animal {
         System.out.println("\nAnimal:\n   -Name: " + this.name + "\n   -Age: " + this.age + "\n   -Health level: " + this.healthLevel + "\n   -Hunger level: " + this.hungerLevel + "\n   -Mood level: " + this.moodLevel);
     }
 
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 }
