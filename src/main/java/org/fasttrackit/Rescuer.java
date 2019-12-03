@@ -2,8 +2,8 @@ package org.fasttrackit;
 
 public class Rescuer {
 
-    String name;
-    double money;
+    private String name;
+    private double money;
 
     public Rescuer(String name, double money) {
         this.name = name;
@@ -15,22 +15,54 @@ public class Rescuer {
     }
 
     public void feed(Animal animal, AnimalFood food) {
-        String animalName = animal.name;
-        String foodName = food.name;
-        double saturation = 3;
+        System.out.println("\n" + this.name + " just gave " + animal.getName() + " some " + food.getName());
 
-        System.out.println("\n" + this.name + " just gave " + animalName + " some " + foodName);
+        int saturation = food.getSaturation();
 
-        if (foodName == animal.favoriteFood) {
+        if (food.getName().equals(animal.getFavoriteFood())) {
             saturation += 2;
+            animal.changeHungerLevel(1, "decrement");
         }
-
-        if (animal.hungerLevel - saturation < 0) {
-            animal.hungerLevel = 0;
+        if (animal.getHungerLevel() - saturation < 0) {
+            animal.setHungerLevel(0);
         } else {
-            animal.hungerLevel -= saturation;
+            animal.changeHungerLevel(saturation, "decrement");
         }
 
-        System.out.println("Current hunger level: " + animal.hungerLevel);
+        System.out.println("Current hunger level: " + animal.getHungerLevel());
+        System.out.println("Current mood level: " + animal.getMoodLevel());
+    }
+
+    public void entertainment(Animal animal, Game game) {
+
+        System.out.println(
+                "\n" + this.name + " just played " + game.getActivityName() + " with " +
+                        animal.getName() + " for " + game.getActivityDurationInM() + " minutes"
+        );
+
+        if (animal.getMoodLevel() + 5 > 10) {
+            animal.setMoodLevel(10);
+        } else {
+            animal.changeMoodLevel(5, "increment");
+        }
+
+        System.out.println("Current mood level: " + animal.getMoodLevel());
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
     }
 }
