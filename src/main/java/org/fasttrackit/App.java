@@ -14,6 +14,7 @@ public class App {
         dog.setMoodLevel(5.0);
         dog.setHealthLevel(10);
         dog.setFavoriteFood("Pedigree");
+        dog.setFavoriteActivity("fetch");
         dog.printInfo();
 
         Rescuer rescuer = new Rescuer("Alex", 1000);
@@ -29,7 +30,7 @@ public class App {
         Activities walk = new Activities(rescuer, dog, "walking");
 
         Game fetch = new Game(rescuer, dog, "fetch", 30);
-        rescuer.entertainment(dog, fetch);
+        rescuer.game(dog, fetch);
 
         rescuer.feed(dog, pedigree);
 

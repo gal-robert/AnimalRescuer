@@ -33,17 +33,25 @@ public class Rescuer {
         System.out.println("Current mood level: " + animal.getMoodLevel());
     }
 
-    public void entertainment(Animal animal, Game game) {
+    public void game(Animal animal, Game game) {
 
         System.out.println(
                 "\n" + this.name + " just played " + game.getActivityName() + " with " +
                         animal.getName() + " for " + game.getActivityDurationInM() + " minutes"
         );
 
-        if (animal.getMoodLevel() + 5 > 10) {
+        int saturation;
+
+        if (animal.getFavoriteActivity().equals(game.getActivityName())) {
+            saturation = 2;
+        } else {
+            saturation = 1;
+        }
+
+        if (animal.getMoodLevel() + saturation > 10) {
             animal.setMoodLevel(10);
         } else {
-            animal.changeMoodLevel(5, "increment");
+            animal.changeMoodLevel(saturation, "increment");
         }
 
         System.out.println("Current mood level: " + animal.getMoodLevel());
