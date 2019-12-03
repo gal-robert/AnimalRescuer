@@ -34,5 +34,7 @@ public class App {
 
         rescuer.feed(dog, pedigree);
 
+        dog.mood();
+
     }
 }
