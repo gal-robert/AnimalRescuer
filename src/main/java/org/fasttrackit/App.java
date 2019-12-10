@@ -9,7 +9,7 @@ public class App {
         cat.setFavoriteFood("mice");
         cat.printInfo();
 
-        Dog dog = new Dog("Rufus", 2, "Akita");
+        Animal dog = new Dog("Rufus", 2, "Akita");
         dog.setHungerLevel(5.2);
         dog.setMoodLevel(5.0);
         dog.setHealthLevel(10);
@@ -27,14 +27,15 @@ public class App {
         Veterinary veterinar = new Veterinary("Joe", "Canine");
         veterinar.printInfo();
 
-        Activities walk = new Activities(rescuer, dog, "walking");
+//        Activities walk = new Activities(rescuer, dog, "walking");
 
         Game fetch = new Game(rescuer, dog, "fetch", 30);
-        rescuer.game(dog, fetch);
+//        rescuer.game(dog, fetch);
 
-        rescuer.feed(dog, pedigree);
+//        rescuer.feed(dog, pedigree);
 
         dog.mood();
+        cat.mood();
 
     }
 }

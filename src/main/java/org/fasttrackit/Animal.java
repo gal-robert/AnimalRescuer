@@ -27,7 +27,8 @@ public class Animal {
     public void mood() {
         if (moodLevel >= 7) {
             System.out.println(this.name + " is really happy");
-        } else if (moodLevel <= 4 && moodLevel > 7) {
+
+        } else if (moodLevel >= 4 && moodLevel < 7) {
             System.out.println(this.name + " is feeling alright");
         } else if (moodLevel >= 0 && moodLevel < 4) {
             System.out.println(this.name + " is feeling bad");
