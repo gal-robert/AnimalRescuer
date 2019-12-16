@@ -33,7 +33,7 @@ public class Rescuer {
         System.out.println("Current mood level: " + animal.getMoodLevel());
     }
 
-    public void game(Animal animal, Game game) {
+    public void game(Animal animal, EntertainmentActivity game) {
 
         System.out.println(
                 "\n" + this.name + " just played " + game.getActivityName() + " with " +
