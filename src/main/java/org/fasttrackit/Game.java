@@ -33,8 +33,8 @@ public class Game {
             feed();
         } else if (command.contains("show")) {
             if (command.contains("food")) {
-                for (int i = 0; i < foods.size(); i++) {
-                    System.out.println((i + 1) + ". " + foods.get(i).getName());
+                for (AnimalFood food : foods) {
+                    System.out.println(food.getName());
                 }
             } else if (command.contains("activities")) {
                 for (int i = 0; i < activities.length; i++) {
@@ -45,6 +45,9 @@ public class Game {
             }
         } else if (command.equals("exit") || command.equals("quit")) {
             System.exit(0);
+        } else {
+            System.out.println("You can use the following commands:\n   show activities\n   show food\n   exit\n   " +
+                    "activity\n   feed");
         }
 
     }
@@ -64,16 +67,18 @@ public class Game {
 
         if (nameScanner.nextLine().equals("fetch")) {
             player.game(animals.get(0), (EntertainmentActivity) activities[0]);
+        } else if (nameScanner.nextLine().equals("walk")) {
+            player.game(animals.get(0), (EntertainmentActivity) activities[1]);
         }
 
     }
 
     private void createActivity() {
-        Activities fetch = new EntertainmentActivity(player, animals.get(0), "fetch", 30);
-        Activities walk = new EntertainmentActivity(player, animals.get(0), "walk", 50);
+        EntertainmentActivity fetch = new EntertainmentActivity(player, animals.get(0), "fetch", 30);
+        EntertainmentActivity walk = new EntertainmentActivity(player, animals.get(0), "walk", 50);
 
-        activities[0] = (EntertainmentActivity) fetch;
-        activities[1] = (EntertainmentActivity) walk;
+        activities[0] = fetch;
+        activities[1] = walk;
     }
 
     private void createFood() {
@@ -95,8 +100,7 @@ public class Game {
         Scanner money = new Scanner(System.in);
         int moneyInput = money.nextInt();
 
-        Rescuer rescuer = new Rescuer(nameInput, moneyInput);
-        return rescuer;
+        return new Rescuer(nameInput, moneyInput);
     }
 
 
